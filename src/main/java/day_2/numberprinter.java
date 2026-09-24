@@ -1,3 +1,5 @@
+package day_2;
+
 public class numberprinter {
     public static void main(String[] args) {
         System.out.println("Numbers from 1 to 10:");

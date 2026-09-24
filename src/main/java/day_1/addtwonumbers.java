@@ -1,3 +1,5 @@
+package day_1;
+
 public class addtwonumbers {
     static void add(int a , int b){
         System.out.println(a + b);

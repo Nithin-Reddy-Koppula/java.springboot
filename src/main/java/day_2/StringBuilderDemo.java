@@ -1,3 +1,5 @@
+package day_2;
+
 public class StringBuilderDemo {
 
     public static void main(String[] args) {

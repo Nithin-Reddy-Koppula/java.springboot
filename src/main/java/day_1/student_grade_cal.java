@@ -1,3 +1,5 @@
+package day_1;
+
 public class student_grade_cal {
     public static void main(String[] args) {
 

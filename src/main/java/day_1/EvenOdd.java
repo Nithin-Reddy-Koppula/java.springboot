@@ -1,3 +1,5 @@
+package day_1;
+
 public class EvenOdd {
     public static void main(String[] args) {
         int number = 25;

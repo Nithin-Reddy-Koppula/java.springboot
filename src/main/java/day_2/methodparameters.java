@@ -1,3 +1,5 @@
+package day_2;
+
 public class methodparameters {
 
     static void greet(String name) {

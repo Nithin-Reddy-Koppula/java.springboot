@@ -1,3 +1,5 @@
+package day_2;
+
 public class returndemo {
 
     static int add(int a, int b) {

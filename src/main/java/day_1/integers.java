@@ -1,3 +1,5 @@
+package day_1;
+
 public class integers {
 
         public static void main(String[] args) {
