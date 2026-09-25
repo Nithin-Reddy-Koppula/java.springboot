@@ -1,4 +1,4 @@
-package day_3;
+package Day_3;
 
 public class Main {
 }
