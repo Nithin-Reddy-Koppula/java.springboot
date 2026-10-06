@@ -1,94 +1,303 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+    <!-- Maven project model version -->
     <modelVersion>4.0.0</modelVersion>
 
+
+    <!-- ===================================================== -->
+    <!-- Spring Boot Parent                                    -->
+    <!-- ===================================================== -->
+
     <parent>
+
+        <!-- Spring Boot organization -->
         <groupId>org.springframework.boot</groupId>
+
+        <!-- Spring Boot parent project -->
         <artifactId>spring-boot-starter-parent</artifactId>
+
+        <!-- Spring Boot version -->
         <version>3.5.0</version>
+
+        <!-- Don't look for parent pom.xml locally -->
         <relativePath/>
+
     </parent>
 
+
+    <!-- ===================================================== -->
+    <!-- Project Information                                   -->
+    <!-- ===================================================== -->
+
+    <!-- Your project's group -->
     <groupId>org.example</groupId>
+
+    <!-- Project name -->
     <artifactId>day-6</artifactId>
+
+    <!-- Project version -->
     <version>0.0.1-SNAPSHOT</version>
 
+    <!-- Project display name -->
     <name>day-6</name>
-    <description>Spring Boot Day 8 Book API</description>
+
+    <!-- Project description -->
+    <description>Spring Boot Day 9 Book API</description>
+
+
+    <!-- ===================================================== -->
+    <!-- Project Properties                                    -->
+    <!-- ===================================================== -->
 
     <properties>
+
+        <!-- Java version used by the project -->
         <java.version>17</java.version>
-        <start-class>Day_8.Day8Application</start-class>
+
+        <!-- Main Spring Boot application -->
+        <start-class>Day_9.Day9Application</start-class>
+
     </properties>
+
+
+    <!-- ===================================================== -->
+    <!-- Dependencies                                          -->
+    <!-- ===================================================== -->
 
     <dependencies>
 
-        <!-- Spring Boot Web -->
+
+        <!-- ================================================= -->
+        <!-- Spring Boot Web                                   -->
+        <!-- ================================================= -->
+
+        <!--
+            Provides REST API functionality.
+
+            Used for:
+            @RestController
+            @GetMapping
+            @PostMapping
+            @PutMapping
+            @DeleteMapping
+            @RequestParam
+            @PathVariable
+            @RestControllerAdvice
+            ResponseEntity
+        -->
         <dependency>
+
+            <!-- Spring Boot organization -->
             <groupId>org.springframework.boot</groupId>
+
+            <!-- Web starter -->
             <artifactId>spring-boot-starter-web</artifactId>
+
         </dependency>
 
-        <!-- Spring Data JPA -->
+
+        <!-- ================================================= -->
+        <!-- Spring Data JPA                                  -->
+        <!-- ================================================= -->
+
+        <!--
+            Provides database functionality.
+
+            Used for:
+            @Entity
+            JpaRepository
+            Page
+            Pageable
+            PageRequest
+            Sort
+        -->
         <dependency>
+
+            <!-- Spring Boot organization -->
             <groupId>org.springframework.boot</groupId>
+
+            <!-- JPA starter -->
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+
         </dependency>
 
-        <!-- MySQL -->
+
+        <!-- ================================================= -->
+        <!-- MySQL                                             -->
+        <!-- ================================================= -->
+
+        <!--
+            MySQL JDBC driver.
+
+            Allows our Spring Boot application
+            to communicate with MySQL.
+        -->
         <dependency>
+
+            <!-- MySQL organization -->
             <groupId>com.mysql</groupId>
+
+            <!-- MySQL JDBC driver -->
             <artifactId>mysql-connector-j</artifactId>
+
+            <!-- Only required while application is running -->
             <scope>runtime</scope>
+
         </dependency>
 
-        <!-- Validation -->
+
+        <!-- ================================================= -->
+        <!-- Validation                                        -->
+        <!-- ================================================= -->
+
+        <!--
+            Provides validation annotations such as:
+
+            @Valid
+            @NotNull
+            @NotBlank
+            @Size
+            @Min
+            @Max
+        -->
         <dependency>
+
+            <!-- Spring Boot organization -->
             <groupId>org.springframework.boot</groupId>
+
+            <!-- Validation starter -->
             <artifactId>spring-boot-starter-validation</artifactId>
+
         </dependency>
 
-        <!-- Lombok -->
+
+        <!-- ================================================= -->
+        <!-- Lombok                                             -->
+        <!-- ================================================= -->
+
+        <!--
+            Lombok reduces boilerplate code.
+
+            Examples:
+            @Getter
+            @Setter
+            @NoArgsConstructor
+            @AllArgsConstructor
+        -->
         <dependency>
+
+            <!-- Lombok organization -->
             <groupId>org.projectlombok</groupId>
+
+            <!-- Lombok library -->
             <artifactId>lombok</artifactId>
+
+            <!-- Optional dependency -->
             <optional>true</optional>
+
         </dependency>
 
-        <!-- DevTools -->
+
+        <!-- ================================================= -->
+        <!-- Spring Boot DevTools                              -->
+        <!-- ================================================= -->
+
+        <!--
+            Automatically restarts the application
+            when code changes during development.
+        -->
         <dependency>
+
+            <!-- Spring Boot organization -->
             <groupId>org.springframework.boot</groupId>
+
+            <!-- DevTools -->
             <artifactId>spring-boot-devtools</artifactId>
+
+            <!-- Only required during development -->
             <optional>true</optional>
+
         </dependency>
 
-        <!-- Testing -->
+
+        <!-- ================================================= -->
+        <!-- Spring Boot Testing                               -->
+        <!-- ================================================= -->
+
+        <!--
+            Provides testing tools such as:
+
+            JUnit
+            Mockito
+            MockMvc
+        -->
         <dependency>
+
+            <!-- Spring Boot organization -->
             <groupId>org.springframework.boot</groupId>
+
+            <!-- Testing starter -->
             <artifactId>spring-boot-starter-test</artifactId>
+
+            <!-- Only used during testing -->
             <scope>test</scope>
+
         </dependency>
+
 
     </dependencies>
 
+
+    <!-- ===================================================== -->
+    <!-- Build Configuration                                   -->
+    <!-- ===================================================== -->
+
     <build>
+
         <plugins>
 
+
+            <!-- ================================================= -->
+            <!-- Spring Boot Maven Plugin                         -->
+            <!-- ================================================= -->
+
+            <!--
+                Used to:
+
+                1. Run Spring Boot
+                2. Build the application
+                3. Create an executable JAR
+            -->
             <plugin>
+
+                <!-- Spring Boot organization -->
                 <groupId>org.springframework.boot</groupId>
+
+                <!-- Spring Boot Maven plugin -->
                 <artifactId>spring-boot-maven-plugin</artifactId>
 
+
                 <configuration>
-                    <mainClass>Day_8.Day8Application</mainClass>
+
+                    <!--
+                        Specifies the main class
+                        used to start the application.
+                    -->
+                    <mainClass>Day_9.Day9Application</mainClass>
+
                 </configuration>
 
             </plugin>
 
+
         </plugins>
+
     </build>
+
 
 </project>
